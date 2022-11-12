@@ -14,10 +14,6 @@ app.get('/', function (req, res) {
     res.send("<h1>Home Page</h1>")
 })
 
-app.listen(process.env.PORT  || SERVER_PORT, () => {
-    console.log(`Server running at http://${SERVER_HOST}:${SERVER_PORT}/`);
-})
-
 //http://localhost:3000/profile
 app.post('/profile', (req, res) => {
     console.log(req.body)
@@ -34,3 +30,7 @@ app.post('/profile', (req, res) => {
         res.send(`User ID: ${req.params.id}`);
       }
   )
+
+  app.listen(process.env.PORT  || SERVER_PORT, () => {
+    console.log(`Server running at http://${SERVER_HOST}:${SERVER_PORT}/`);
+})
